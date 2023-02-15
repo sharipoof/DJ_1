@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<form class="site-form has-background-light" method="post" style="margin-top: 200px;"
+    enctype="multipart/form-data">
+    {% csrf_token %}
+    <p class="content has-text-centered is-size-4 mb-4">Are you sure to delete post "{{ article }}"?</p>
+    <div class="has-text-centered">
+        <button type="submit" class="button is-primary">yes</button>
+        <a href="{% url 'article_detail' article.slug %}" class="button is-danger">No</a>
+    </div>
+</form>
+{% endblock %}
